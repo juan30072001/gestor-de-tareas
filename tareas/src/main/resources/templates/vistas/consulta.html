@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{plantillas/plantilla :: head}">
+
+</head>
+
+<body>
+  <div th:replace="~{plantillas/plantilla :: lateral}">
+  </div>
+
+  <div style="margin-left: 400px; margin-top: -500px; width: 800px;" class="contenedor">
+    <table class="table table-striped">
+      <tr>
+        <td><h3 th:text="${mensaje}"></h3></td>
+      </tr>
+      <tr>
+        <td>ID</td>
+        <td>NOMBRE</td>
+        <td>DESCRIPCION</td>
+      </tr>
+      <tr>
+        <td th:text="${tarea.id}"></td>
+        <td th:text="${tarea.nombre}"></td>
+        <td th:text="${tarea.descripcion}"></td>
+      </tr>
+      <tr>
+        <td><button class="btn btn-outline-danger"><a th:href="@{/eliminar/} + ${tarea.id}">Realizada</a></button></td>
+        <td><button class="btn btn-outline-success"><a th:href="@{/modificar/} + ${tarea.id}">Modificar</a></button></td>
+      </tr>
+    </table>
+  </div>
+</body>
+
+</html>
